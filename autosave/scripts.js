@@ -6,7 +6,6 @@
 ;(function (window, document, undefined) {
   const formElem = document.getElementById('save-me');
   var log = console.log;
-  var faves = []; // NEW 
   
   var saveData = function(){
     var id = formElem.id;
@@ -17,6 +16,7 @@
       formData[event.target.name] = event.target.checked;
     } else {
       formData[event.target.name] = event.target.value;
+      log('name ' + formData[event.target.name])
     }
 		localStorage.setItem('formData-' + id, JSON.stringify(formData));
   }
@@ -43,7 +43,7 @@
       else {
         field.value = formData[data];
       }
-      log(formData)
+      // log(formData)
     }
   }
   
